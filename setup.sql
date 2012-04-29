@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2012 at 05:47 AM
+-- Generation Time: Apr 29, 2012 at 12:47 AM
 -- Server version: 5.1.58
 -- PHP Version: 5.3.6-13ubuntu3.6
 
@@ -19,6 +19,51 @@ SET time_zone = "+00:00";
 --
 -- Database: `team_rage`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE IF NOT EXISTS `members` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `rage_id` int(11) NOT NULL,
+  `lastUpdated` varchar(45) DEFAULT NULL,
+  `description` varchar(250) DEFAULT NULL,
+  `manualImage` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`id`, `name`, `rage_id`, `lastUpdated`, `description`, `manualImage`) VALUES
+(1, 'Derp', 24, '4/14/2012 - 5:44 AM', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quotes`
+--
+
+CREATE TABLE IF NOT EXISTS `quotes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL,
+  `context` varchar(45) DEFAULT NULL,
+  `quote` varchar(255) NOT NULL,
+  `date` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `quotes`
+--
+
+INSERT INTO `quotes` (`id`, `member_id`, `context`, `quote`, `date`) VALUES
+(1, 1, 'lol derp.', 'huzzah', '3/29/2012');
 
 -- --------------------------------------------------------
 
